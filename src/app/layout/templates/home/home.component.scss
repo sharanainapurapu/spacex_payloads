@@ -1,0 +1,24 @@
+.card {
+  border: 0;
+
+  a {
+    display: block;
+    text-align: center;
+  }
+
+  .figure {
+    display: inline-block;
+    padding-top: 1rem;
+
+    .figure-img {
+      margin-bottom: 0;
+      line-height: 1;
+      padding: 0 1rem 1rem 1rem;
+    }
+
+    figcaption.figure-caption {
+      font-size: 1rem;
+      color: black;
+    }
+  }
+}

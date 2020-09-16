@@ -1,0 +1,7 @@
+<div class="container-fluid px-0">
+  <spacex-header></spacex-header>
+  <spacex-search *ngIf="showFooter"></spacex-search>
+  <spacex-loader></spacex-loader>
+  <ng-template #dynamicSlot></ng-template>
+  <spacex-pagination *ngIf="showFooter"></spacex-pagination>
+</div>
