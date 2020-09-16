@@ -7,6 +7,7 @@ import * as Services from '../services';
 import { LayoutComponent } from './layout.component';
 import { RouterModule } from "@angular/router";
 import { LoaderService } from '../components/loading/loader.service';
+import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { LoaderService } from '../components/loading/loader.service';
   imports: [
     RouterModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    NgbCarouselModule
   ],
   entryComponents: [
     Components.HeaderComponent,

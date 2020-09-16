@@ -17,11 +17,11 @@ export class SearchComponent implements OnInit {
   search(event) {
     event.preventDefault();
     let queryString = this._service.buildQuery({searchKey:this.searchKey});
-    console.log(queryString);
+    // console.log(queryString);
     this._service.fetchData(queryString);
 
     let paginationQueryString = this._paginationService.buildPaginationQuery({searchKey:this.searchKey});
-    console.log(paginationQueryString);
+    // console.log(paginationQueryString);
     this._paginationService.fetchPaginationData(paginationQueryString);
   }
 

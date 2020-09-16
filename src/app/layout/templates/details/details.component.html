@@ -1,10 +1,59 @@
-<h1>{{ details?.mission_name }}</h1>
-<div class="jumbotron">
-  <h1 class="display-4">Hello, world!</h1>
-  <p class="lead">{{ details?.mission_name }}</p>
-  <hr class="my-4" />
-  <p>{{ details?.launch_site?.site_name_long }}</p>
-  <p class="lead">
-    {{ details?.launch_date_local }}
+<h4 class="text-center mt-4 pt-4 mb-4 pb-4">{{ details?.mission_name }}</h4>
+<div class="carousel_bs">
+  <div class="carousel_wrapper">
+    <ngb-carousel *ngIf="details?.ships">
+      <ng-template ngbSlide *ngFor="let ship of details?.ships">
+        <img
+          class="d-block w-100"
+          src="{{ ship?.image }}"
+          alt="space ship"
+          onerror="{this.style.display = 'none'}"
+        />
+        <div class="carousel-caption">
+          <p class="launchDate ">
+            {{ details?.launch_date_local | date: "medium" }}
+          </p>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+  </div>
+  <p class="site-name text-center mt-4 pt-4 mb-4 pb-4">
+    {{ details?.launch_site?.site_name_long }}
   </p>
+  <div
+    class="btn-group mr-2"
+    role="group"
+    aria-label="First group"
+    *ngIf="details?.links"
+  >
+    <a
+      type="button"
+      class="btn btn-secondary"
+      *ngIf="details?.links?.article_link"
+      href="details?.links?.article_link"
+      target="_blank"
+      >Article Link</a
+    >
+    <a
+      type="button"
+      class="btn btn-secondary"
+      target="_blank"
+      *ngIf="details?.links?.video_link"
+      href="details?.links?.video_link"
+      >Video Link</a
+    >
+  </div>
 </div>
+
+<!-- <div id="carouselControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner"> 
+    <div class="carousel-item active" >
+      <img
+      src="{{ ship?.image }}"
+      class="d-block w-100"
+      alt="space ship"    
+      onerror="{this.style.display = 'none'}"
+      data-aos="zoom-in"/>   
+    </div>
+  </div>
+</div> -->

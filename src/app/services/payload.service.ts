@@ -20,7 +20,7 @@ export class PayloadService {
     this._loader.displayLoader.next(true);
     this.graphQLClient.request(query).then(
       (response) => {
-        console.log(response);
+        // console.log(response);
         this.responseObject.next(response);
         this._loader.displayLoader.next(false);
       },
@@ -37,7 +37,7 @@ export class PayloadService {
     } else {
       queryString+= 'limit:'+limit+', offset:'+offset+', find: { mission_name: "'+searchKey+'"}';
     }
-    console.log(queryString);
+    // console.log(queryString);
     return this.getQueryObject(queryString);
   }
 

@@ -1,0 +1,16 @@
+.carousel_bs{
+    width: 50%;
+    margin: 0 auto;
+
+    .carousel_wrapper {
+        height: 500px;
+        max-height: 500px;
+        overflow: hidden;
+    }
+
+    .launchDate {
+        color: yellow;
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+}

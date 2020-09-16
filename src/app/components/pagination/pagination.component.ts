@@ -20,7 +20,7 @@ export class PaginationComponent implements OnInit {
 
   ngOnInit(): void {
     let queryString = this._paginationService.buildPaginationQuery({});    
-    console.log("pagination", queryString);
+    // console.log("pagination", queryString);
     this._paginationService.fetchPaginationData(queryString);
     this.responseSubscription = this._paginationService.paginationRes.subscribe((response)=>{    
       this.list = response;
@@ -34,7 +34,7 @@ export class PaginationComponent implements OnInit {
   getData(page:number) {
     this.currentPage = page;
     let queryString = this._service.buildQuery({offset:((page-1)*10)});
-    console.log("pagination", queryString);
+    // console.log("pagination", queryString);
     this._service.fetchData(queryString);
   }
 
