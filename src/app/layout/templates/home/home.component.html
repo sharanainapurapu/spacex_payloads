@@ -1,6 +1,6 @@
 <h1 class="text-center m-4 p-2">Launces</h1>
-<ul class="card-columns" data-aos="zoom-in-up">
-  <li class="card" *ngFor="let item of list?.launchesPast" data-aos="fade-up">
+<ul class="card-columns"  data-aos="zoom-in">
+  <li class="card" *ngFor="let item of list?.launchesPast">
     <a routerLink="/details" routerLinkActive="active" [state]="item">
       <figure class="figure">
         <img
@@ -9,28 +9,12 @@
           alt="space ship"
           *ngFor="let ship of item?.ships"
           onerror="{this.style.display = 'none'}"
-          data-aos="zoom-out-up"
+          data-aos="zoom-in"
         />
         <figcaption class="figure-caption text-center font-size-20">
           Mission {{ item?.mission_name }}
         </figcaption>
       </figure>
-      <!-- <img
-        src="{{ ship?.image }}"
-        class="card-img-top"
-        alt="space ship"
-        *ngFor="let ship of item?.ships"/>
-      <div class="card-body">
-        <h5 class="card-title">Mission {{ item?.mission_name }}</h5>
-        <p class="card-text">{{ item?.launch_site?.site_name_long }}</p>
-      </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">
-          {{ item.launch_date_local | date: "medium" }}
-        </li>
-        <li class="list-group-item">{{ item.rocket.rocket_name }}</li>
-        <li class="list-group-item">{{ item.links.video_link }}</li>
-      </ul> -->
     </a>
   </li>
 </ul>

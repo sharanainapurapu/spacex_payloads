@@ -77,7 +77,8 @@ export class PayloadService {
                 home_port
                 image
               }
+              id
             }
           }`;
-  }
+  }  
 }

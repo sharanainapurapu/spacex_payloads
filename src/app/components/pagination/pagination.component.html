@@ -1,1 +1,18 @@
-<p class="text-center">pagination works!</p>
+<footer>
+  <nav>
+    <ul class="pagination">
+      <li class="page-item"
+          [ngClass]="{'disabled': (currentPage === 1)}">
+          <button class="page-link" (click)="getData(currentPage - 1)">Previous</button>
+      </li>
+      <li class="page-item" *ngFor="let pageNo of pagesArray"
+          [ngClass]="{'active': (currentPage === pageNo)}">
+        <button class="page-link" (click)="getData(pageNo)">{{pageNo}}</button>
+      </li>
+      <li [ngClass]="{'disabled': (currentPage === numberOfPages)}"
+          class="page-item">
+          <button class="page-link" (click)="getData(currentPage+1)">Next</button>
+      </li>
+    </ul>
+  </nav>
+</footer>

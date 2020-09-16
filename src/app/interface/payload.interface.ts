@@ -19,6 +19,7 @@ export interface Launches {
       }
     }
     ships: Array<Ship>;  
+    id : String;
     }
   }
   

@@ -1,0 +1,17 @@
+footer {
+    position: fixed;
+    bottom: 0;
+    height: 58px;
+    background: #000000;
+    width: 100%;
+    text-align: right;
+
+    nav {
+        float: right;
+        margin: 10px 1.5rem;
+
+        li.disabled {
+            pointer-events: none;
+        }
+    }
+}

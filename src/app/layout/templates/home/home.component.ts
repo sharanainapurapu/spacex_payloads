@@ -18,10 +18,13 @@ export class HomeComponent implements OnInit{
 
   ngOnInit(): void {
     let queryString = this._service.buildQuery({});
-    console.log(queryString);
     this._service.fetchData(queryString);
     this.responseSubscription = this._service.responseObject.subscribe((response)=>{    
       this.list = response;
-    })
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.responseSubscription.unsubscribe();
   }
 }
